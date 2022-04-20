@@ -382,6 +382,10 @@ header .navbar ul li a:hover {
   background-color: var(--color-blue);
 }
 
+.our-team .media-icons-list li:hover svg {
+  fill: var(--color-white);
+}
+
 .our-team .media-icons-list li a{
   margin: 0;
 }
@@ -556,7 +560,7 @@ footer .media-icons-list svg {
   display: block;
   width: 16px;
   height: 2px;
-  background-color: #212121;
+  background-color: var(--color-black);
   position: absolute;
   left: 51%;
   top: 50%;
