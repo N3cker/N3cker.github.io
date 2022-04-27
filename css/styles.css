@@ -84,6 +84,7 @@ body h2 {
   margin-top: 30px;
   cursor: pointer;
   letter-spacing: 3%;
+  transition: all .25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-button:hover {
@@ -188,9 +189,15 @@ header .navbar ul li {
   padding: 0 25px;
 }
 
+header .navbar ul li svg {
+  transition: fill .25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 header .navbar ul li a {
   font-size: 14px;
   font-weight: 500;
+  transition: color .25s cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 header .navbar ul li:hover a {
@@ -276,6 +283,7 @@ header .navbar ul li:hover svg {
   border-radius: 4px;
   margin-bottom: 30px;
   border: solid 3px transparent;
+  transition: border .25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .strengths figure:hover {
@@ -381,10 +389,16 @@ header .navbar ul li:hover svg {
   margin: 0 5px;
   cursor: pointer;
   box-shadow: none;
+  transition: background-color .25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .our-team .media-icons-list li:hover {
   background-color: var(--color-blue);
+}
+
+.our-team .media-icons-list svg {
+  fill: var(--color-grey-icons);
+  transition: fill .25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .our-team .media-icons-list li:hover svg {
@@ -395,9 +409,6 @@ header .navbar ul li:hover svg {
   margin: 0;
 }
 
-.our-team .media-icons-list svg {
-  fill: var(--color-grey-icons);
-}
 
 /* Our Clients */
 .our-clients h2 {
@@ -419,20 +430,24 @@ header .navbar ul li:hover svg {
   border: 1px solid #AFB1B8;
   border-radius: 4px;
   position: relative;
+  transition: background-color .25s cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.our-clients ul li:hover {
+  border-color: var(--color-blue); 
 }
 
 .our-clients ul li svg{
   fill: var(--color-grey-icons);
-}
+  transition: fill .25s cubic-bezier(0.4, 0, 0.2, 1);
 
-.our-clients ul li:hover {
-  border-color: var(--color-blue);
-  
 }
-
 .our-clients ul li:hover svg {
   fill: var(--color-blue);
 }
+
+
 
 .our-clients ul li a {
   position: absolute;
@@ -493,6 +508,7 @@ footer .address-footer li:first-child {
   height: 44px;
   margin-right: 10px;
   overflow: hidden;
+  transition: background-color .25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .media-icons-list li:hover {
@@ -513,6 +529,49 @@ footer .address-footer li:first-child {
 }
 
 footer .media-icons-list svg {
+  fill: var(--color-white);
+}
+
+.newsletter {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.newsletter-wrapper {
+  margin-left: 78px;
+}
+
+.newsletter input {
+  background-color: var(--color-grey);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  height: 50px;
+  width: 358px;
+  padding-left: 16px;
+  color: var(--color-white);
+}
+
+
+
+.newsletter button {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  height: 50px;
+  width: 200px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.newsletter svg {
   fill: var(--color-white);
 }
 
@@ -541,6 +600,7 @@ footer .media-icons-list svg {
   width: 528px;
   background-color: var(--color-white);
   border-radius: 4px;
+  padding: 40px;
 }
 
 .popup-button {
@@ -574,6 +634,150 @@ footer .media-icons-list svg {
 
 .popup-button span:last-child {
   transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.modal form input {
+  height: 40px;
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding: 12px;
+  padding-left: 42px;
+}
+
+.modal form textarea {
+  width: 100%;
+  height: 120px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+  padding: 12px;
+}
+
+.modal h3 {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.modal label {
+  font-size: 12px;
+  color: var(--color-light-grey);
+}
+
+.modal label a {
+  text-decoration: underline;
+  color: var(--color-blue);
+}
+
+.modal form label input[type=checkbox] {
+  width: 16px;
+  height: 15px;
+  margin-bottom: 30px;
+}
+
+.modal form button {
+  width: 200px;
+  height: 50px;
+  margin: 0 auto;
+  border: none;
+  background: var(--color-blue);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  color: var(--color-white);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.modal form label div {
+  position: relative;
+}
+
+.modal .input--icon {
+  position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(15px, -50%);
+    display: block;
+    width: 12px;
+    height: 12px;
+}
+
+.modal form label input:focus {
+  outline-color: var(--color-blue);
+}
+
+.modal form label textarea:focus {
+  outline-color: var(--color-blue);
+}
+
+.modal form label div input:focus + .input--icon svg {
+  fill: var(--color-blue);
+}
+
+.modal form label textarea::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal form .checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 20px 10px 20px 15px;
+}
+
+.modal form .checkbox-wrapper > div {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  margin-right: 10px;
+}
+
+.modal form .checkbox-wrapper input[type=checkbox]{
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modal form .checkbox-wrapper input[type=checkbox]:checked + div{
+  background-color: var(--color-blue);
+  border: none;
+}
+
+.modal form .checkbox-wrapper input[type=checkbox]:checked + div svg{
+  display: block;
+}
+
+.modal form .checkbox-wrapper > div > div{
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 3px;
+  box-sizing: border-box;
+  transition: background-color .25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal form .checkbox-wrapper svg{
+  display: none;
+  fill: white;
+}
+
+.modal form .checkbox-wrapper p {
+  font-size: 14px;
 }
 
 /* Portfolio page */
