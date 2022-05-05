@@ -12,27 +12,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/main.min.css">
     <link rel="shortcut icon" type="image/jpg" href="/images/favicon.ico"/>
     <title>WebStudio</title>
 </head>
 <body>
     <header>
-        <div class="data-modal is-hidden" data-modal>
-            <div class="modal">
-                <button class="popup-button" data-modal-close>
+        <div class="popup-container is-hidden" data-modal>
+            <div class="popup-container__window">
+                <button class="popup-container__close-btn" data-modal-close>
                     <div>
                         <span></span>
                         <span></span>
                     </div>
                 </button>
                 <h3>Zostaw swoje dane w formularzu poniżej</h3>
-                <form>
+                <form class="popup-form">
                     <label>
                         Imie
                         <div>
                             <input type="text" name="imie">
-                            <span class="input--icon">
+                            <span class="input-icon">
                                 <svg width="12" height="12">
                                     <use href="/images/icons.svg#icon-input-name"></use>
                                 </svg>
@@ -43,7 +43,7 @@
                         Telefon
                         <div>
                             <input type="tel" name="phone_number">
-                            <span class="input--icon">
+                            <span class="input-icon">
                                 <svg height="13" width="13">
                                     <use href="/images/icons.svg#icon-input-phone"></use>
                                 </svg>
@@ -54,7 +54,7 @@
                         Email
                         <div>
                             <input type="email" name="email">
-                            <span class="input--icon">
+                            <span class="input-icon">
                                 <svg width="15" height="12">
                                     <use href="/images/icons.svg#icon-input-mail"></use>
                                 </svg>
@@ -77,23 +77,22 @@
                         </div>
                         <p>Oświadczam iż akceptuję <a href="#">Regulamin</a> i <a href="#">Politykę Prywatności.</a></p> 
                     </label>
-
-
-                    <button type="submit">Wyślij</button>
+                    <button class="popup-form__btn" type="submit">Wyślij</button>
                 </form>
             </div>
         </div>
+
         <div class="navbar-wrapper">
             <div class="navbar">
-                <a class="logo--black" href="/index.html"><span>Web</span>Studio</a>
-                <nav>
-                    <ul>
-                        <li class="nav-active-page"><a href="/index.html">Agencja</a></li>
+                <a class="logo logo--black" href="/index.html"><span>Web</span>Studio</a>
+                <nav class="navigation">
+                    <ul class="navigation__list">
+                        <li class="navigation__active-page"><a href="/index.html">Agencja</a></li>
                         <li><a href="/portfolio/">Portfolio</a></li>
                         <li><a href="#">Kontakt</a></li>
                     </ul>
                 </nav>
-                <ul>
+                <ul class="navbar__contact-list">
                     <li>
                         <svg width="16" height="12">
                             <use href="/images/icons.svg#icon-envelope"></use>
@@ -113,7 +112,7 @@
         </div>
         <div class="splash">
             <h1>EFEKTYWNE ROZWIĄZANIA DLA WASZEGO BIZNESU </h1>
-            <button class="splash-button" data-modal-open type="button">Zamów usługę</button>
+            <button class="splash__btn" data-modal-open type="button">Zamów usługę</button>
         </div>
     </header>
 
@@ -177,7 +176,7 @@
         <section class="about">
             <div class="container">
                 <h2>Czym się zajmujemy</h2>
-                <ul>
+                <ul class="about__list">
                     <li>
                         <figure>
                             <img src="/images/img.jpg" width="370" height="294" alt="photo">
@@ -203,7 +202,7 @@
         <section class="our-team">
             <div class="container">
                 <h2>Nasz zespół</h2>
-                <ul>
+                <ul our-team__list>
                     <li>
                         <figure>
                             <img src="/images/team1.jpg" width="270" height="260" alt="John Doe">
@@ -418,7 +417,7 @@
         <div class="container">
             <ul class="footer-list">
                 <li>
-                    <a class="logo--white" href="/index.html"><span>Web</span>Studio</a>
+                    <a class="logo logo--white" href="/index.html"><span>Web</span>Studio</a>
                     <address>
                         <ul class="address-footer">
                             <li>
@@ -466,9 +465,9 @@
                         </li>
                     </ul>
                 </li>
-                <li class="newsletter-wrapper">
+                <li class="newsletter">
                     <h4>ZAPISZ SIĘ DO NEWSLETTERA</h4>
-                    <form class="newsletter">
+                    <form class="newsletter__form">
                         <input type="email" name="email" placeholder="E-mail">
                         <button type="submit">
                             <span>Zapisz Się</span>
