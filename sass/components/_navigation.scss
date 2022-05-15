@@ -1,42 +1,150 @@
 .navbar-wrapper {
     border: 1px solid $color-nav-border;
     position: relative;
+    padding-left: 15px;
+    padding-right: 35px;
     
     .navbar {
         width: 100%;
         height: 80px;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: 0 auto;
-        width: 1200px;
+        margin: 0 auto; 
 
-        ul {
+        @media (min-width: 1200px) {
+            width: 1200px;
+        }
+
+        &__menu {
+            width: 100vw;
+            height: 100vh;
+            background-color: $color-white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 500;
+            padding: 50px 40px;
             display: flex;
-            li {
-                a {
-                    font-size: 14px;
-                    font-weight: 500;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: opacity .25s cubic-bezier(0.4, 0, 0.2, 1);
+
+            @media (min-width: 768px) {
+                opacity: 1;
+                pointer-events: all;
+                height: 80px;
+            }
+
+            @media (min-width: 768px) {
+                position: static;
+                background-color: transparent;
+                flex-direction: row;
+                padding: 0;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .navbar__close-btn {
+                border: none;
+                position: absolute;
+                right: 8px;
+                top: 8px;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                background-color: transparent;
+                cursor: pointer;
+
+                @media (min-width: 768px) {
+                    display: none;
+                }
+
+                div {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+
+                    span {
+                        display: block;
+                        width: 22px;
+                        height: 2px;
+                        background-color: $color-black;
+                        position: absolute;
+                        left: 51%;
+                        top: 50%;
+                        transform: translate(-50%, -50%) rotate(45deg);
+
+                        &:last-child {
+                            transform: translate(-50%, -50%) rotate(-45deg);
+                        }
+                    }
+                }
+
+                &:active {
+                    div {
+                        span {
+                            background-color: $color-blue;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        &__burger {
+            background-color: transparent;
+            border: none;
+
+            @media (min-width: 768px) {
+                display: none;
+            }
+
+            &:active {
+                svg {
+                    fill: $color-blue;
                 }
             }
         }
 
         &__contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            margin-bottom: 64px;
+
+            @media (min-width:768px) {
+                gap: 10px;
+                margin: 0;
+            }
+
+            @media (min-width: 1200px) {
+                flex-direction: row;
+            }
 
             li {
                 padding: 0 25px;
 
                 svg {
+                    display: none;
                     transition: fill .25s cubic-bezier(0.4, 0, 0.2, 1);
+    
+                    @media (min-width: 768px) {
+                            display: inline-block;
+                    }
                 }
 
                 a {
+                    font-size: 34px;
+                    font-weight: 500;
                     transition: color .25s cubic-bezier(0.4, 0, 0.2, 1);
+
+                    @media (min-width:768px) {
+                        font-size: 14px;
+                    }
                 }
 
-                &:hover {
+                &:active, &:hover {
                     svg {
                         fill: $color-blue;
                     }
@@ -48,16 +156,58 @@
             }
         }
 
+        &__media-list {
+            display: flex;
+
+            @media (min-width: 768px) {
+                display: none;
+            }
+
+            a {
+                font-size: 18px;
+                font-weight: 500;
+                color: $color-blue;
+                padding: 0 10px;
+                border-right: 1px solid rgba(33, 33, 33, 0.2);
+            }
+
+            li:last-child {
+                a {
+                    border: none;
+                    padding: 0 0 0 10px;
+                }
+            }
+        }
+            
         .navigation {
             &__list {
+                display: flex;
+                flex-direction: column;
+
+                @media (min-width: 768px) {
+                    flex-direction: row;
+                    gap: 50px;
+                    padding-left: 80px; 
+                }
+
                 li {
                     padding: 0 23px;
+                    margin-bottom: 36px; 
+
+                    @media (min-width:768px) {
+                        margin: 0;
+                    }
 
                     a {
-                        font-size: 14px;
+                        font-weight: 500;
+                        font-size: 40px;
                         transition: color .25s cubic-bezier(0.4, 0, 0.2, 1);
+
+                        @media (min-width: 768px) {
+                            font-size: 14px;
+                        }
                         
-                        &:hover {
+                        &:active, &:hover {
                             color: $color-blue;
                         }
                     }
@@ -72,10 +222,14 @@
                         content: "";
                         position: absolute;
                         bottom: -1px;
-                        display: block;
+                        display: none;
                         height: 4px;
                         width: 55px;
                         background-color: $color-blue;
+        
+                        @media (min-width: 768px) {
+                            display: block; 
+                        }
                     }
                 }
             }

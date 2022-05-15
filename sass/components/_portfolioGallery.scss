@@ -4,10 +4,27 @@
     margin-bottom: 64px;
     justify-content: center;
 
+    @media (min-width: 768px) and (max-width: 1199px) {
+        justify-content: space-around;
+    }
+
+    @media (min-width: 1200px) {
+        gap: 30px;
+    }
+
     li {
-        width: 370px;
+        width: 450px;
         margin: 0 15px 30px 15px;
         position: relative;
+        
+        @media (min-width: 768px) and (max-width: 1199px) {
+            width: 354px;
+        }
+
+        @media (min-width: 1200px) {
+            width: 370px;
+            margin: 0;
+        }
 
         &::after {
             content: "";
@@ -29,6 +46,11 @@
         
         img {
             vertical-align: middle;
+            height: auto;
+
+            @media (min-width: 768px) {
+                height: 294px;
+            }
         }
         
         figcaption {
@@ -54,30 +76,31 @@
             overflow: hidden;
             
             &__description {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 position: absolute;
                 text-align: left;
-                bottom: -300px;
+                transform: translateY(0);
                 background: rgba(33, 150, 243, 0.9);
                 width: 100%;
-                padding: 63px 24px;
+                height: 100%;
                 color: $color-white;
                 font-size: 18px;
                 letter-spacing: 3%;
                 line-height: 28px;
-                transition: bottom 250ms cubic-bezier(0.4, 0, 0.2, 1);
+                transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
             }
         }
         
         &:hover {
-            .gallery-img {
-                .gallery-img__description {
-                    bottom: 0;
-                }
+            .gallery-img__description {
+                transform: translateY(-100%);
             }
         }
     }
-    
-    li:nth-child(3n) {
-        margin-right: 0;
-    }
+}
+
+.portfolio {
+    padding-bottom: 0;
 }

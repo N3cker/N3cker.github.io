@@ -1,10 +1,24 @@
 footer {
-    height: 250px;
     background-color: $color-grey;
     color: $color-white;
 
     .footer-list {
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 60px;
+
+        @media (min-width: 768px) and (max-width: 1199px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        @media (min-width: 1200px) {
+            flex-direction: row;
+        }
         
         h4 {
             margin-bottom: 20px;
@@ -18,7 +32,7 @@ footer {
 }
 
 .address-footer {
-    margin-right: 70px;
+    // margin-right: 70px;
 
     li {
         padding-top: 15px;
@@ -45,13 +59,14 @@ footer {
 .footer-list {
     .media-icons-list {
         display: flex;
+        gap: 10px;
 
         li {
             border-radius: 50%;
             background-color: rgba(255, 255, 255, 0.1);
             width: 44px;
             height: 44px;
-            margin-right: 10px;
+            // margin-right: 10px;
             overflow: hidden;
             transition: background-color .25s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -76,22 +91,33 @@ footer {
 }
 
 .newsletter {
-    margin-left: 78px;
+    // margin-left: 78px;
 
     &__form {
         display: flex;
+        flex-direction: column;
         justify-content: flex-start;
         align-items: center;
         gap: 10px;
+
+        @media (min-width: 1200px) {
+            flex-direction: row;
+        }
 
         input {
             background-color: $color-grey;
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 4px;
             height: 50px;
-            width: 358px;
+            width: 450px;
             padding-left: 16px;
             color: $color-white;
+            margin-bottom: 20px;
+
+            @media (min-width: 1200px) {
+                width: 358px;
+                margin: 0;
+            }
         }
 
         button {
