@@ -2,11 +2,11 @@
   "name": "weatherapp",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://N3cker.github.io/",
+  "homepage": "https://N3cker.github.io/index.html",
   "source": "src/index.html",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /N3cker.github.io/"
+    "build": "parcel build src/*.html --public-url /WeatherApp/"
   },
   "repository": {
     "type": "git",
